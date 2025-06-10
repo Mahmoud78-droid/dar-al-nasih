@@ -35,3 +35,15 @@ img {
   margin: 10px;
   border-radius: 8px;
 }
+@media (max-width: 600px) {
+  img {
+    width: 100%;
+  }
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+  section {
+    padding: 10px;
+  }
+}
