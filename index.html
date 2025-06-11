@@ -3,652 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وكالة دار الناصح للدعاية والاعلان</title>
-    <style>
-        :root {
-            --primary-color: #1a5276;
-            --secondary-color: #d4ac0d;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        .logo span {
-            display: block;
-            font-size: 16px;
-            color: white;
-            margin-top: 5px;
-        }
-        
-        .contact-info {
-            text-align: left;
-        }
-        
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: var(--dark-color);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-        }
-        
-        nav ul li {
-            position: relative;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            display: block;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero-content {
-            width: 100%;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-        
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #e8b10d;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: -10px;
-            left: 25%;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: var(--light-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-        
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-        
-        .service-content {
-            padding: 20px;
-        }
-        
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
-        /* Calligraphy Gallery */
-        .gallery {
-            padding: 80px 0;
-            background-color: var(--light-color);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            height: 300px;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-text h2 {
-            font-size: 36px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--light-color);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .contact-info-box {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .contact-info-box h3 {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .contact-info-box h3::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .contact-info-box p, .contact-info-box a {
-            margin-bottom: 15px;
-            display: block;
-            color: #555;
-            text-decoration: none;
-        }
-        
-        .contact-info-box a:hover {
-            color: var(--primary-color);
-        }
-        
-        .working-hours {
-            margin-top: 15px;
-        }
-        
-        .working-hours p {
-            margin-bottom: 8px;
-            position: relative;
-            padding-right: 20px;
-        }
-        
-        .working-hours p::before {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: var(--secondary-color);
-        }
-        
-        .map-container {
-            height: 300px;
-            margin-top: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .footer-logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-        
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            font-size: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .copyright {
-            width: 100%;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Language Toggle */
-        .language-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-        
-        .language-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .language-btn:hover {
-            background-color: #154360;
-        }
-        
-        /* RTL Styles */
-        [dir="rtl"] {
-            text-align: right;
-        }
-        
-        [dir="rtl"] .contact-info {
-            text-align: right;
-        }
-        
-        [dir="rtl"] .section-title h2::after {
-            left: auto;
-            right: 25%;
-        }
-        
-        [dir="rtl"] .contact-info-box h3::after {
-            left: auto;
-            right: 0;
-        }
-        
-        [dir="rtl"] .working-hours p {
-            padding-right: 0;
-            padding-left: 20px;
-        }
-        
-        [dir="rtl"] .working-hours p::before {
-            right: auto;
-            left: 0;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .logo, .contact-info {
-                margin-bottom: 15px;
-                text-align: center;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>وكالة دار الناصح للدعاية والإعلان - خطاط أبو محمود العيسوي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
+
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                دار الناصح
-                <span>وكالة دعاية وإعلان</span>
-            </div>
-            <div class="contact-info">
-                <a href="tel:+966549957313"><i class="fas fa-phone"></i> +966 54 995 7313</a>
-                <a href="mailto:yoyo28122005@gmail.com"><i class="fas fa-envelope"></i> yoyo28122005@gmail.com</a>
-                <a href="https://wa.me/966549957313"><i class="fab fa-whatsapp"></i> تواصل عبر واتساب</a>
-            </div>
+        <div class="container">
+            <h1 class="logo">وكالة دار الناصح للدعاية والإعلان</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="index-en.html" class="lang-switch">English</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#services">خدماتنا</a></li>
-            <li><a href="#gallery">معرض الخط العربي</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#contact">اتصل بنا</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>وكالة دار الناصح للدعاية والإعلان</h1>
-            <p>نقدم حلولاً إبداعية في مجال الدعاية والإعلان باحترافية وجودة عالية</p>
-            <a href="#contact" class="btn">اتصل بنا الآن</a>
+
+    <section class="hero">
+        <div class="container">
+            <h2>فن الخط والإعلان يجتمعان ليبدعا</h2>
+            <p>تصاميم عصرية وأنيقة تترك انطباعًا دائمًا. لمسة فنية من الخطاط أبو محمود العيسوي.</p>
+            <a href="#contact" class="cta-button">اطلب خدمتك الآن</a>
         </div>
     </section>
-    
-    <!-- Services Section -->
-    <section class="services" id="services">
+
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-title">
-                <h2>خدماتنا</h2>
-                <p>نقدم مجموعة متنوعة من خدمات الدعاية والإعلان بجودة عالية</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1567443024551-f3e3a7b9d41e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="لوحات محلات">
-                    </div>
-                    <div class="service-content">
-                        <h3>لوحات محلات</h3>
-                        <p>تصميم وتنفيذ لوحات المحلات بجميع أنواعها (فليكس، بنر، استيكر) بأعلى جودة وأحدث التصاميم</p>
-                    </div>
+            <h2>خدماتنا</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/150/FFC107/000000?text=لوحات" alt="لوحات محلات">
+                    <h3>لوحات محلات</h3>
+                    <p>تصنيع وتركيب لوحات فلكس، بنر، واستيكر بأعلى جودة.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="طباعة">
-                    </div>
-                    <div class="service-content">
-                        <h3>طباعة مستندات</h3>
-                        <p>طباعة كروت عمل، فواتير، بروشورات، وغيرها من المستندات التجارية بجودة عالية</p>
-                    </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/150/FFC107/000000?text=مطبوعات" alt="طباعة">
+                    <h3>مطبوعات ورقية</h3>
+                    <p>طباعة كروت شخصية، فواتير، بروشورات، وكل ما تحتاجه أعمالك.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خط يدوي">
-                    </div>
-                    <div class="service-content">
-                        <h3>خط يدوي واستندات رسمية</h3>
-                        <p>كتابة خط يدوي فني واحترافي، وإعداد الاستندات والوثائق الرسمية بأناقة واحترافية</p>
-                    </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/150/FFC107/000000?text=خط+يدوي" alt="خط يدوي">
+                    <h3>خط يدوي ورسمي</h3>
+                    <p>خط يدوي إبداعي للاستندات الرسمية والشهادات وغيرها بلمسة فنية فريدة.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Calligraphy Gallery -->
-    <section class="gallery" id="gallery">
+
+    <section id="about" class="about">
         <div class="container">
-            <div class="section-title">
-                <h2>معرض الخط العربي</h2>
-                <p>نماذج من أعمالنا في الخط العربي الفني</p>
+            <h2>عن الخطاط أبو محمود العيسوي</h2>
+            <p>بخبرة تمتد لسنوات في فن الخط العربي الأصيل وتصميم الإعلانات، يقدم الخطاط أبو محمود العيسوي خدماته بحرفية عالية وإتقان، جامعًا بين الأصالة والمعاصرة لتقديم أعمال فنية تلبي طموحاتكم وتعزز من هوية علامتكم التجارية.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>تواصل معنا</h2>
+            <div class="contact-info">
+                <p><strong>العنوان:</strong> المملكة العربية السعودية، الرياض، طريق المدينة المنورة مع تقاطع شارع الفرزدق.</p>
+                <p><strong>للتواصل المباشر والواتساب:</strong> <a href="https://wa.me/966549957313">+966 54 995 7313</a></p>
+                <p><strong>البريد الإلكتروني:</strong> <a href="mailto:yoyo28122005@gmail.com">yoyo28122005@gmail.com</a></p>
             </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1609358905581-0aeb9f1a0c0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خط عربي 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad047c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خط عربي 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خط عربي 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1601986313628-013a53c5a8e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خط عربي 4">
-                </div>
+            <div class="map">
+                <a href="https://maps.app.goo.gl/ufU5M9b4JNXrjHQs8" target="_blank">
+                    <img src="https://via.placeholder.com/800x300/CCCCCC/FFFFFF?text=اضغط+هنا+لعرض+الخريطة" alt="خريطة الموقع" style="width:100%; height:auto; border-radius: 8px;">
+                </a>
             </div>
         </div>
     </section>
-    
-    <!-- About Section -->
-    <section class="about" id="about">
+
+    <footer>
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>من نحن</h2>
-                    <p>وكالة دار الناصح للدعاية والإعلان هي وكالة متخصصة في تقديم حلول الدعاية والإعلان باحترافية عالية، تحت إشراف الخطاط أبو محمود العيسوي.</p>
-                    <p>نتميز بتقديم خدمات عالية الجودة مع الحفاظ على الأصالة والاحترافية في العمل، حيث نضمن لعملائنا الحصول على أفضل النتائج التي تتناسب مع احتياجاتهم وتطلعاتهم.</p>
-                    <p>فريقنا من المحترفين يضم مصممين مبدعين وطباعين محترفين وخطاطين متميزين، يعملون معاً لتقديم أفضل الحلول الإعلانية لعملائنا الكرام.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="عن الوكالة">
-                </div>
-            </div>
+            <p>&copy; 2025 وكالة دار الناصح للدعاية والإعلان. جميع الحقوق محفوظة.</p>
         </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>اتصل بنا</h2>
-                <p>نحن هنا لمساعدتك في جميع احتياجاتك الدعائية والإعلانية</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info-box">
-                    <h3>معلومات الاتصال</h3>
-                    <a href="tel:+966549957313"><i class="fas fa-phone"></i> +966 54 995 7313</a>
-                    <a href="mailto:yoyo28122005@gmail.com"><i class="fas fa-envelope"></i> yoyo28122005@gmail.com</a>
-                    <a href="https://wa.me/966549957313"><i class="fab fa-whatsapp"></i> واتساب: +966 54 995 7313</a>
-                    <a href="https://www.facebook.com/share/16jaA6TwRR/"><i class="fab fa-facebook"></i> صفحتنا على فيسبوك</a>
-                </div>
-                
-                <div class="contact-info-box">
-                    <h3>العنوان</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> المملكة العربية السعودية - الرياض</p>
-                    <p>طريق المدينة المنورة مع تقاطع شارع الفرزدق</p>
-                    <div class="map-container">
-                        <iframe src="https://maps.google.com/maps?q=24.713552,46.675296&z=15&output=embed" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-                
-                <div class="contact-info-box">
-                    <h3>ساعات العمل</h3>
-                    <div class="working-hours">
-                        <p>من السبت إلى الخميس:</p>
-                        <p>من ٩ صباحاً إلى ١ ظهراً</p>
-                        <p>ومن ٤ عصراً إلى ١٠ مساءً</p>
-                        <p>يوم الجمعة عطلة</p>
-                    </div>
-                </div>
-          
+    </footer>
+
+</body>
+</html>
